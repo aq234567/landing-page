@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A_Q Landing Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #121212;
+      color: #eee;
+      transition: background 0.4s, color 0.4s;
+    }
+    header {
+      background: #1f1f1f;
+      padding: 20px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom: 2px solid #b30000;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      color: #b30000;
+    }
+    nav a {
+      color: #eee;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight:600;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #b30000; }
+    .toggle-dark {
+      background: #b30000;
+      color: #121212;
+      border:none;
+      padding:8px 16px;
+      border-radius:4px;
+      cursor:pointer;
+      font-weight:600;
+    }
+    .toggle-dark:hover { background: #cc0000; }
+    .section { padding:100px 40px; text-align:center; min-height:100vh; }
+    #home { background: linear-gradient(to right, #1a1a1a, #2a2a2a); }
+    #home h1 {
+      font-size: 60px;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 10px;
+      animation: fadeInDown 1.2s ease;
+    }
+    #home p { font-size:24px; animation: fadeInUp 1.2s ease; }
+    #about, #gallery { background:#1a1a1a; }
+    #about h2, #gallery h2 { font-family: 'Playfair Display', serif; font-size:36px; margin-bottom:20px; }
+    #about p { font-size:20px; max-width:700px; margin:0 auto; line-height:1.6; }
+    .gallery { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:30px; }
+    .car-card {
+      background:#2a2a2a;
+      border:2px solid #b30000;
+      border-radius:8px;
+      overflow:hidden;
+      width:320px;
+      transition: transform 0.3s;
+    }
+    .car-card:hover { transform: scale(1.03); }
+    .car-card img { width:100%; height:200px; object-fit:cover; }
+    .car-name {
+      background:#1f1f1f;
+      padding:10px;
+      font-weight:600;
+      color:#b30000;
+      font-size:18px;
+    }
+    @keyframes fadeInDown {
+      from { opacity:0; transform:translateY(-30px); } to { opacity:1; transform:translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); }
+    }
+    body.dark-mode {
+      background:#eee;
+      color:#121212;
+    }
+    body.dark-mode header {
+      background:#f0f0f0;
+      border-bottom-color:#333;
+    }
+    body.dark-mode .logo { color:#900; }
+    body.dark-mode nav a { color:#121212; }
+    body.dark-mode nav a:hover { color:#900; }
+    body.dark-mode .toggle-dark {
+      background:#900; color:#eee;
+    }
+    body.dark-mode .toggle-dark:hover {
+      background:#b30000;
+    }
+    body.dark-mode .car-card {
+      background:#fdfdfd;
+      border-color:#333;
+    }
+    body.dark-mode .car-name {
+      background:#e0e0e0;
+      color:#900;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">A_Q</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <button class="toggle-dark" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </nav>
+  </header>
+
+  <section id="home" class="section">
+    <h1>Welcome to A_Q</h1>
+    <p>Experience the elegance of modern automotive design.</p>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About A_Q</h2>
+    <p>A_Q celebrates the beauty and performance of the world’s most iconic modern cars—where engineering meets artistry. A passion-driven showcase for each masterpiece of the road.</p>
+  </section>
+
+  <section id="gallery" class="section">
+    <h2>Car Gallery</h2>
+    <div class="gallery">
+      <div class="car-card">
+        <img src="https://source.unsplash.com/collection/190727/320x200" alt="Ferrari SF90">
+        <div class="car-name">Ferrari SF90</div>
+      </div>
+      <div class="car-card">
+        <img src="https://source.unsplash.com/collection/1427833/320x200" alt="Lamborghini Huracán">
+        <div class="car-name">Lamborghini Huracán</div>
+      </div>
+      <div class="car-card">
+        <img src="https://source.unsplash.com/collection/3724526/320x200" alt="McLaren 720S">
+        <div class="car-name">McLaren 720S</div>
+      </div>
+      <div class="car-card">
+        <img src="https://source.unsplash.com/collection/889935/320x200" alt="Porsche 911 Turbo">
+        <div class="car-name">Porsche 911 Turbo</div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+
+</body>
+</html>
